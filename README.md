@@ -1,4 +1,4 @@
-# Group YYY - {Short snappy Title of your project}
+# Group 18  - Effeciency of Lockdown in countries during COVID-19
 
 - Your title can change over time.
 
