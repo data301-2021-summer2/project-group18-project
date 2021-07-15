@@ -18,7 +18,7 @@ Details for Milestone are available on Canvas (left sidebar, Course Project) or 
 
 - Anikait Kapoor
 - Cris Garce
-- Yatharth Mathur
+- Yatharth Mathur:I am person who is always intrested in new things and I love learning new things 
 
 ## References
 
