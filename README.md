@@ -15,7 +15,7 @@ Our data is chosen from WorldoMeter, a tool created by a data analytics company 
 
 ## Team Members
 
-- Anikait Kapoor
+- Anikait Kapoor: Is a second yearStudent also who likes Computer Sciences
 - Cris Garce:My name is Cris Grace and I am a COSC student entering my second Year at UBCO. My passions include coding, gaming and football.
 - Yatharth Mathur: I am a second year student who is intrested in Data Analytics and Computer Sciences. 
 
