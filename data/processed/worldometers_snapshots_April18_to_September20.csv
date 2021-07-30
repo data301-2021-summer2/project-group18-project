@@ -1,4 +1,4 @@
-Date,Country,Population,Total Tests,Total Cases,Total Deaths,Total Recovered,Serious or Critical,Active Cases
+Date,Country,Population,Total_Tests,Total_Cases,Total_Deaths,Total_Recovered,Serious_or_Critical,Active_Cases
 2020-04-18,USA,331441624,3722145,738792,39014,68269,13551,631509
 2020-04-18,India,1383048851,335123,16365,521,2463,,13381
 2020-04-18,Brazil,212900304,62985,36722,2361,14026,6634,20335

@@ -22,3 +22,4 @@ Our data is chosen from WorldoMeter, a tool created by a data analytics company 
 ## References
 
 DABAX. “Real Time World Statistics.” Worldometer, www.worldometers.info/. 
+https://www.bbc.com/news/world-52103747
