@@ -1,4 +1,4 @@
-# Group 18  - Effeciency of Lockdown in countries during COVID-19
+# Group 18  - Effeciency of Lockdown in countries during COVID-19(During the timeframe of April to Sepetember 2020)
 
 - Your title can change over time.
 
