@@ -22,4 +22,4 @@ Our data is chosen from WorldoMeter, a tool created by a data analytics company 
 ## References
 
 DABAX. “Real Time World Statistics.” Worldometer, www.worldometers.info/. 
-https://www.bbc.com/news/world-52103747
+“Coronavirus: The World in Lockdown in Maps and Charts.” BBC News, BBC, 6 Apr. 2020, www.bbc.com/news/world-52103747. 
