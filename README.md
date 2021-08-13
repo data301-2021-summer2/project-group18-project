@@ -15,7 +15,7 @@ Our data is chosen from WorldoMeter, a tool created by a data analytics company 
 
 ## Team Members
 
-- Anikait Kapoor: Is a second yearStudent also who likes Computer Sciences
+- Anikait Kapur: Is a second yearStudent also who likes Computer Sciences
 - Cris Garce:My name is Cris Grace and I am a COSC student entering my second Year at UBCO. My passions include coding, gaming and football.
 - Yatharth Mathur: I am a second year student who is intrested in Data Analytics and Computer Sciences. 
 
@@ -23,7 +23,8 @@ Our data is chosen from WorldoMeter, a tool created by a data analytics company 
 
 DABAX. “Real Time World Statistics.” Worldometer, www.worldometers.info/. 
 “Coronavirus: The World in Lockdown in Maps and Charts.” BBC News, BBC, 6 Apr. 2020, www.bbc.com/news/world-52103747. 
+http://seaborn.pydata.org/tutorial/aesthetics.html
 
 ## Video Link
 
-You can find the explainer video here: [here](video.com)
+You can find the explainer video here: [here](https://www.youtube.com/watch?v=o4I3ZgyK9Dg&feature=youtu.be)
