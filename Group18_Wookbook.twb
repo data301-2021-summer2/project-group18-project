@@ -618,8 +618,8 @@
         </view>
         <style>
           <style-rule element='axis'>
-            <encoding attr='space' class='0' field='[federated.1qpnhej1l6uuov1gbs4xx17g6ijw].[Longitude (generated)]' field-type='quantitative' max='23870124.304163523' min='-21940639.38251128' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
-            <encoding attr='space' class='0' field='[federated.1qpnhej1l6uuov1gbs4xx17g6ijw].[Latitude (generated)]' field-type='quantitative' max='10936460.306573613' min='-4271210.8646661118' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+            <encoding attr='space' class='0' field='[federated.1qpnhej1l6uuov1gbs4xx17g6ijw].[Longitude (generated)]' field-type='quantitative' max='21182771.328082018' min='-21922723.69600407' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.1qpnhej1l6uuov1gbs4xx17g6ijw].[Latitude (generated)]' field-type='quantitative' max='81176373.909048527' min='-74117593.490174398' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
           </style-rule>
           <style-rule element='map-layer'>
             <format attr='enabled' id='b01002_001e' value='false' />
@@ -750,53 +750,6 @@
       </table>
       <simple-id uuid='{5CFC97C8-0742-4EEB-A266-1CA7EF57536C}' />
     </worksheet>
-    <worksheet name='New Cases Vs Day After Lockdown(India)'>
-      <table>
-        <view>
-          <datasources>
-            <datasource caption='worldometers_snapshots_April18_ (worldometers_snapshots_April18_to_September20)' name='federated.1qpnhej1l6uuov1gbs4xx17g6ijw' />
-          </datasources>
-          <datasource-dependencies datasource='federated.1qpnhej1l6uuov1gbs4xx17g6ijw'>
-            <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[Name]' type='nominal' />
-            <column datatype='date' name='[Date]' role='dimension' type='ordinal' />
-            <column datatype='integer' name='[New Cases]' role='measure' type='quantitative' />
-            <column-instance column='[Date]' derivation='Month' name='[mn:Date:ok]' pivot='key' type='ordinal' />
-            <column-instance column='[Country]' derivation='None' name='[none:Country:nk]' pivot='key' type='nominal' />
-            <column-instance column='[New Cases]' derivation='Sum' name='[sum:New Cases:qk]' pivot='key' type='quantitative' />
-          </datasource-dependencies>
-          <filter class='categorical' column='[federated.1qpnhej1l6uuov1gbs4xx17g6ijw].[mn:Date:ok]'>
-            <groupfilter from='6' function='range' level='[mn:Date:ok]' to='9' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
-          </filter>
-          <filter class='categorical' column='[federated.1qpnhej1l6uuov1gbs4xx17g6ijw].[none:Country:nk]'>
-            <groupfilter function='member' level='[none:Country:nk]' member='&quot;India&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
-          </filter>
-          <slices>
-            <column>[federated.1qpnhej1l6uuov1gbs4xx17g6ijw].[none:Country:nk]</column>
-            <column>[federated.1qpnhej1l6uuov1gbs4xx17g6ijw].[mn:Date:ok]</column>
-          </slices>
-          <aggregation value='true' />
-        </view>
-        <style>
-          <style-rule element='axis'>
-            <format attr='width' field='[federated.1qpnhej1l6uuov1gbs4xx17g6ijw].[sum:New Cases:qk]' value='48' />
-          </style-rule>
-          <style-rule element='header'>
-            <format attr='width' field='[federated.1qpnhej1l6uuov1gbs4xx17g6ijw].[none:Country:nk]' value='36' />
-          </style-rule>
-        </style>
-        <panes>
-          <pane selection-relaxation-option='selection-relaxation-allow'>
-            <view>
-              <breakdown value='auto' />
-            </view>
-            <mark class='Automatic' />
-          </pane>
-        </panes>
-        <rows>([federated.1qpnhej1l6uuov1gbs4xx17g6ijw].[none:Country:nk] * [federated.1qpnhej1l6uuov1gbs4xx17g6ijw].[sum:New Cases:qk])</rows>
-        <cols>[federated.1qpnhej1l6uuov1gbs4xx17g6ijw].[mn:Date:ok]</cols>
-      </table>
-      <simple-id uuid='{4C799FDA-E6B5-4F13-B9F3-216E60F4CEE1}' />
-    </worksheet>
     <worksheet name='New Cases Vs Day For India'>
       <table>
         <view>
@@ -847,6 +800,60 @@
         <cols>[federated.1qpnhej1l6uuov1gbs4xx17g6ijw].[tdy:Date:qk]</cols>
       </table>
       <simple-id uuid='{A2E311A9-63E2-49F7-9D4D-AFB8FD621C22}' />
+    </worksheet>
+    <worksheet name='New Cases Vs Day Lockdown and after(India)'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='worldometers_snapshots_April18_ (worldometers_snapshots_April18_to_September20)' name='federated.1qpnhej1l6uuov1gbs4xx17g6ijw' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1qpnhej1l6uuov1gbs4xx17g6ijw'>
+            <column datatype='string' name='[Country]' role='dimension' semantic-role='[Country].[Name]' type='nominal' />
+            <column datatype='date' name='[Date]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[New Cases]' role='measure' type='quantitative' />
+            <column-instance column='[Date]' derivation='Month' name='[mn:Date:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Country]' derivation='None' name='[none:Country:nk]' pivot='key' type='nominal' />
+            <column-instance column='[New Cases]' derivation='Sum' name='[sum:New Cases:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1qpnhej1l6uuov1gbs4xx17g6ijw].[mn:Date:ok]'>
+            <groupfilter function='union' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[mn:Date:ok]' member='4' />
+              <groupfilter function='member' level='[mn:Date:ok]' member='5' />
+              <groupfilter function='member' level='[mn:Date:ok]' member='6' />
+              <groupfilter function='member' level='[mn:Date:ok]' member='7' />
+              <groupfilter function='member' level='[mn:Date:ok]' member='8' />
+              <groupfilter function='member' level='[mn:Date:ok]' member='9' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.1qpnhej1l6uuov1gbs4xx17g6ijw].[none:Country:nk]'>
+            <groupfilter function='member' level='[none:Country:nk]' member='&quot;India&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.1qpnhej1l6uuov1gbs4xx17g6ijw].[none:Country:nk]</column>
+            <column>[federated.1qpnhej1l6uuov1gbs4xx17g6ijw].[mn:Date:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='width' field='[federated.1qpnhej1l6uuov1gbs4xx17g6ijw].[sum:New Cases:qk]' value='48' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='width' field='[federated.1qpnhej1l6uuov1gbs4xx17g6ijw].[none:Country:nk]' value='36' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>([federated.1qpnhej1l6uuov1gbs4xx17g6ijw].[none:Country:nk] * [federated.1qpnhej1l6uuov1gbs4xx17g6ijw].[sum:New Cases:qk])</rows>
+        <cols>[federated.1qpnhej1l6uuov1gbs4xx17g6ijw].[mn:Date:ok]</cols>
+      </table>
+      <simple-id uuid='{4C799FDA-E6B5-4F13-B9F3-216E60F4CEE1}' />
     </worksheet>
     <worksheet name='New Deaths By Country'>
       <table>
@@ -1137,8 +1144,8 @@
       <zones>
         <zone h='100000' id='10' type-v2='layout-basic' w='100000' x='0' y='0'>
           <zone h='98178' id='16' param='horz' type-v2='layout-flow' w='99150' x='425' y='911'>
-            <zone h='98178' id='14' type-v2='layout-basic' w='83103' x='425' y='911'>
-              <zone h='49089' id='9' name='Positive Vs Day For India(Percentage)' w='33986' x='425' y='911'>
+            <zone h='98178' id='14' type-v2='layout-basic' w='78906' x='425' y='911'>
+              <zone h='49089' id='9' name='Positive Vs Day For India(Percentage)' w='32269' x='425' y='911'>
                 <zone-style>
                   <format attr='border-color' value='#000000' />
                   <format attr='border-style' value='none' />
@@ -1146,7 +1153,7 @@
                   <format attr='margin' value='4' />
                 </zone-style>
               </zone>
-              <zone h='49089' id='11' name='New Cases Vs Day For India' w='25526' x='34411' y='911'>
+              <zone h='49089' id='11' name='New Cases Vs Day For India' w='24237' x='32694' y='911'>
                 <zone-style>
                   <format attr='border-color' value='#000000' />
                   <format attr='border-style' value='none' />
@@ -1154,7 +1161,7 @@
                   <format attr='margin' value='4' />
                 </zone-style>
               </zone>
-              <zone h='49089' id='12' name='New Cases Vs Day After Lockdown(India)' w='23591' x='59937' y='911'>
+              <zone h='49089' id='12' name='New Cases Vs Day Lockdown and after(India)' w='22400' x='56931' y='911'>
                 <zone-style>
                   <format attr='border-color' value='#000000' />
                   <format attr='border-style' value='none' />
@@ -1162,7 +1169,7 @@
                   <format attr='margin' value='4' />
                 </zone-style>
               </zone>
-              <zone h='49089' id='13' name='Deaths Vs Day(India and USA)' w='53773' x='425' y='50000'>
+              <zone h='49089' id='13' name='Deaths Vs Day(India and USA)' w='51057' x='425' y='50000'>
                 <zone-style>
                   <format attr='border-color' value='#000000' />
                   <format attr='border-style' value='none' />
@@ -1170,7 +1177,7 @@
                   <format attr='margin' value='4' />
                 </zone-style>
               </zone>
-              <zone h='49089' id='18' name='Serious and Critical Cases In The USA' w='22477' x='61051' y='50000'>
+              <zone h='49089' id='18' name='Serious and Critical Cases In The USA' w='21342' x='57989' y='50000'>
                 <layout-cache minheight='254' minwidth='173' type-h='scalable' type-w='scalable' />
                 <zone-style>
                   <format attr='border-color' value='#000000' />
@@ -1179,7 +1186,7 @@
                   <format attr='margin' value='4' />
                 </zone-style>
               </zone>
-              <zone h='49089' id='17' name='Deaths Vs Day(India and USA)' pane-specification-id='1' param='[federated.1qpnhej1l6uuov1gbs4xx17g6ijw].[none:Country:nk]' type-v2='color' w='6853' x='54198' y='50000'>
+              <zone h='49089' id='17' name='Deaths Vs Day(India and USA)' pane-specification-id='1' param='[federated.1qpnhej1l6uuov1gbs4xx17g6ijw].[none:Country:nk]' type-v2='color' w='6507' x='51482' y='50000'>
                 <zone-style>
                   <format attr='border-color' value='#000000' />
                   <format attr='border-style' value='none' />
@@ -1188,12 +1195,12 @@
                 </zone-style>
               </zone>
             </zone>
-            <zone fixed-size='302' h='98178' id='15' is-fixed='true' param='vert' type-v2='layout-flow' w='16047' x='83528' y='911'>
-              <zone fixed-size='523' forceUpdate='true' h='60478' id='21' is-fixed='true' type-v2='text' w='16047' x='83528' y='911'>
+            <zone fixed-size='381' h='98178' id='15' is-fixed='true' param='vert' type-v2='layout-flow' w='20244' x='79331' y='911'>
+              <zone fixed-size='523' forceUpdate='true' h='60478' id='21' is-fixed='true' type-v2='text' w='20244' x='79331' y='911'>
                 <formatted-text>
-                  <run>Research Question 1: Did the lockdown in india have a postive effect on the new cases? 
+                  <run>Research Question 1: Did the lockdown in India have a positive effect on the new cases? 
 
-From the scatter graph to the left, it is evident that during the lockdown period, it is evident that the number of cases during the lockdown increased, that to at an increasing rate,which in turn suggests that dispite the lockdown, covid-19 was still spreading in India. However, looking at the line graph showing the cases after the lockdown ended, it is evident that there was a serious rise in the amount of  cases in the initial period after the lockdown eneded. This is evident from the rise in gradient.This is evidence that while the lockdown was not able to fully stop the spread, it was able to limit it. This is further supported by bar graph to the left which shows the percentage of the population that made up the postive cases. Much like the scatter graphs, the bar graph shows an increasing trend, howver, looking at the magnitude of the percetnage postive, at its peak, the percentage postive was only 0.007%. With the lockdown being India&apos;s primary techinque to stop the spread of covid-19, the data from the bar graph is evidence that the lockdown did indeed limit the spread of covid-19.</run>
+From the scatter graph to the left(New Cases Vs Day For India), it is evident that during the lockdown period, it is evident that the number of cases during the lockdown increased, that to at an increasing rate,which in turn suggests that dispite the lockdown, covid-19 was still spreading in India. However, looking at the line graph showing the cases after the lockdown ended, it is evident that there was a serious rise in the amount of  cases in the initial period after the lockdown eneded. This is evident from the rise in gradient.This is evidence that while the lockdown was not able to fully stop the spread, it was able to limit it. This is further supported by bar graph to the left which shows the percentage of the population that made up the postive cases. Much like the scatter graphs, the bar graph shows an increasing trend, howver, looking at the magnitude of the percetnage postive, at its peak, the percentage postive was only 0.01378%. With the lockdown being India&apos;s primary techinque to stop the spread of covid-19, the data from the bar graph is evidence that the lockdown did indeed limit the spread of covid-19.</run>
                 </formatted-text>
                 <zone-style>
                   <format attr='border-color' value='#000000' />
@@ -1202,7 +1209,7 @@ From the scatter graph to the left, it is evident that during the lockdown perio
                   <format attr='margin' value='4' />
                 </zone-style>
               </zone>
-              <zone forceUpdate='true' h='37700' id='22' type-v2='text' w='16047' x='83528' y='61389'>
+              <zone forceUpdate='true' h='37700' id='22' type-v2='text' w='20244' x='79331' y='61389'>
                 <formatted-text>
                   <run fontcolor='#000000'>Research Question 2:  Was herd immunity a viable option for dealing with Covid-19?</run>
                   <run>Æ&#10;&#10;</run>
@@ -1230,9 +1237,9 @@ From the scatter graph to the left, it is evident that during the lockdown perio
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='1650' minheight='1650' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='30' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='98178' id='29' param='vert' type-v2='layout-flow' w='99150' x='425' y='911'>
-                <zone fixed-size='280' h='49089' id='9' is-fixed='true' name='Positive Vs Day For India(Percentage)' w='33986' x='425' y='911'>
+            <zone h='100000' id='32' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98178' id='31' param='vert' type-v2='layout-flow' w='99150' x='425' y='911'>
+                <zone fixed-size='280' h='49089' id='9' is-fixed='true' name='Positive Vs Day For India(Percentage)' w='32269' x='425' y='911'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -1241,7 +1248,7 @@ From the scatter graph to the left, it is evident that during the lockdown perio
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='280' h='49089' id='11' is-fixed='true' name='New Cases Vs Day For India' w='25526' x='34411' y='911'>
+                <zone fixed-size='280' h='49089' id='11' is-fixed='true' name='New Cases Vs Day For India' w='24237' x='32694' y='911'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -1250,7 +1257,7 @@ From the scatter graph to the left, it is evident that during the lockdown perio
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='280' h='49089' id='12' is-fixed='true' name='New Cases Vs Day After Lockdown(India)' w='23591' x='59937' y='911'>
+                <zone fixed-size='280' h='49089' id='12' is-fixed='true' name='New Cases Vs Day Lockdown and after(India)' w='22400' x='56931' y='911'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -1259,11 +1266,11 @@ From the scatter graph to the left, it is evident that during the lockdown perio
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='523' forceUpdate='true' h='60478' id='21' type-v2='text' w='16047' x='83528' y='911'>
+                <zone fixed-size='523' forceUpdate='true' h='60478' id='21' type-v2='text' w='20244' x='79331' y='911'>
                   <formatted-text>
-                    <run>Research Question 1: Did the lockdown in india have a postive effect on the new cases? 
+                    <run>Research Question 1: Did the lockdown in India have a positive effect on the new cases? 
 
-From the scatter graph to the left, it is evident that during the lockdown period, it is evident that the number of cases during the lockdown increased, that to at an increasing rate,which in turn suggests that dispite the lockdown, covid-19 was still spreading in India. However, looking at the line graph showing the cases after the lockdown ended, it is evident that there was a serious rise in the amount of  cases in the initial period after the lockdown eneded. This is evident from the rise in gradient.This is evidence that while the lockdown was not able to fully stop the spread, it was able to limit it. This is further supported by bar graph to the left which shows the percentage of the population that made up the postive cases. Much like the scatter graphs, the bar graph shows an increasing trend, howver, looking at the magnitude of the percetnage postive, at its peak, the percentage postive was only 0.007%. With the lockdown being India&apos;s primary techinque to stop the spread of covid-19, the data from the bar graph is evidence that the lockdown did indeed limit the spread of covid-19.</run>
+From the scatter graph to the left(New Cases Vs Day For India), it is evident that during the lockdown period, it is evident that the number of cases during the lockdown increased, that to at an increasing rate,which in turn suggests that dispite the lockdown, covid-19 was still spreading in India. However, looking at the line graph showing the cases after the lockdown ended, it is evident that there was a serious rise in the amount of  cases in the initial period after the lockdown eneded. This is evident from the rise in gradient.This is evidence that while the lockdown was not able to fully stop the spread, it was able to limit it. This is further supported by bar graph to the left which shows the percentage of the population that made up the postive cases. Much like the scatter graphs, the bar graph shows an increasing trend, howver, looking at the magnitude of the percetnage postive, at its peak, the percentage postive was only 0.01378%. With the lockdown being India&apos;s primary techinque to stop the spread of covid-19, the data from the bar graph is evidence that the lockdown did indeed limit the spread of covid-19.</run>
                   </formatted-text>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -1273,7 +1280,7 @@ From the scatter graph to the left, it is evident that during the lockdown perio
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='280' h='49089' id='13' is-fixed='true' name='Deaths Vs Day(India and USA)' w='53773' x='425' y='50000'>
+                <zone fixed-size='280' h='49089' id='13' is-fixed='true' name='Deaths Vs Day(India and USA)' w='51057' x='425' y='50000'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -1282,7 +1289,7 @@ From the scatter graph to the left, it is evident that during the lockdown perio
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone h='49089' id='17' name='Deaths Vs Day(India and USA)' pane-specification-id='1' param='[federated.1qpnhej1l6uuov1gbs4xx17g6ijw].[none:Country:nk]' type-v2='color' w='6853' x='54198' y='50000'>
+                <zone h='49089' id='17' name='Deaths Vs Day(India and USA)' pane-specification-id='1' param='[federated.1qpnhej1l6uuov1gbs4xx17g6ijw].[none:Country:nk]' type-v2='color' w='6507' x='51482' y='50000'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -1291,7 +1298,7 @@ From the scatter graph to the left, it is evident that during the lockdown perio
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='280' h='49089' id='18' is-fixed='true' name='Serious and Critical Cases In The USA' w='22477' x='61051' y='50000'>
+                <zone fixed-size='280' h='49089' id='18' is-fixed='true' name='Serious and Critical Cases In The USA' w='21342' x='57989' y='50000'>
                   <layout-cache minheight='254' minwidth='173' type-h='scalable' type-w='scalable' />
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -1301,7 +1308,7 @@ From the scatter graph to the left, it is evident that during the lockdown perio
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone forceUpdate='true' h='37700' id='22' type-v2='text' w='16047' x='83528' y='61389'>
+                <zone forceUpdate='true' h='37700' id='22' type-v2='text' w='20244' x='79331' y='61389'>
                   <formatted-text>
                     <run fontcolor='#000000'>Research Question 2:  Was herd immunity a viable option for dealing with Covid-19?</run>
                     <run>Æ&#10;&#10;</run>
@@ -1459,8 +1466,8 @@ From the scatter graph to the left, it is evident that during the lockdown perio
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='1300' minheight='1300' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='63' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='98058' id='62' param='vert' type-v2='layout-flow' w='99136' x='432' y='971'>
+            <zone h='100000' id='65' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='84000' id='64' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000'>
                 <zone h='3800' id='12' type-v2='text' w='49564' x='432' y='971'>
                   <formatted-text>
                     <run>Research Question 1 - What period saw the most community spread during the pandemic ?</run>
@@ -1597,9 +1604,9 @@ From the scatter graph to the left, it is evident that during the lockdown perio
       <size sizing-mode='automatic' />
       <zones>
         <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
-          <zone h='86709' id='7' param='horz' type-v2='layout-flow' w='51169' x='425' y='12380'>
-            <zone h='86709' id='5' type-v2='layout-basic' w='42667' x='425' y='12380'>
-              <zone h='32863' id='3' name='New Cases By Country' w='21328' x='425' y='12380'>
+          <zone h='86709' id='7' param='horz' type-v2='layout-flow' w='51168' x='425' y='12380'>
+            <zone h='86709' id='5' type-v2='layout-basic' w='42666' x='425' y='12380'>
+              <zone h='32863' id='3' name='New Cases By Country' w='21326' x='425' y='12380'>
                 <zone-style>
                   <format attr='border-color' value='#000000' />
                   <format attr='border-style' value='none' />
@@ -1607,7 +1614,7 @@ From the scatter graph to the left, it is evident that during the lockdown perio
                   <format attr='margin' value='4' />
                 </zone-style>
               </zone>
-              <zone h='28906' id='9' name='Deaths And Cases' w='42667' x='425' y='70183'>
+              <zone h='28906' id='9' name='Deaths And Cases' w='42666' x='425' y='70183'>
                 <zone-style>
                   <format attr='border-color' value='#000000' />
                   <format attr='border-style' value='none' />
@@ -1615,7 +1622,7 @@ From the scatter graph to the left, it is evident that during the lockdown perio
                   <format attr='margin' value='4' />
                 </zone-style>
               </zone>
-              <zone h='24940' id='10' name='New Deaths By Country' w='21328' x='425' y='45243'>
+              <zone h='24940' id='10' name='New Deaths By Country' w='21326' x='425' y='45243'>
                 <zone-style>
                   <format attr='border-color' value='#000000' />
                   <format attr='border-style' value='none' />
@@ -1623,7 +1630,7 @@ From the scatter graph to the left, it is evident that during the lockdown perio
                   <format attr='margin' value='4' />
                 </zone-style>
               </zone>
-              <zone h='28901' id='12' name='Total Cases' w='21339' x='21753' y='12380'>
+              <zone h='28901' id='12' name='Total Cases' w='21340' x='21751' y='12380'>
                 <zone-style>
                   <format attr='border-color' value='#000000' />
                   <format attr='border-style' value='none' />
@@ -1631,7 +1638,7 @@ From the scatter graph to the left, it is evident that during the lockdown perio
                   <format attr='margin' value='4' />
                 </zone-style>
               </zone>
-              <zone h='28902' id='21' name='Population' w='21339' x='21753' y='41281'>
+              <zone h='28902' id='21' name='Population' w='21340' x='21751' y='41281'>
                 <zone-style>
                   <format attr='border-color' value='#000000' />
                   <format attr='border-style' value='none' />
@@ -1640,8 +1647,8 @@ From the scatter graph to the left, it is evident that during the lockdown perio
                 </zone-style>
               </zone>
             </zone>
-            <zone fixed-size='160' h='86709' id='6' is-fixed='true' param='vert' type-v2='layout-flow' w='8502' x='43092' y='12380'>
-              <zone fixed-size='143' h='17198' id='8' is-fixed='true' name='New Cases By Country' pane-specification-id='3' param='[federated.1qpnhej1l6uuov1gbs4xx17g6ijw].[none:Calculation_2223933796451827712:nk]' type-v2='color' w='8502' x='43092' y='12380'>
+            <zone fixed-size='160' h='86709' id='6' is-fixed='true' param='vert' type-v2='layout-flow' w='8502' x='43091' y='12380'>
+              <zone fixed-size='143' h='17198' id='8' is-fixed='true' name='New Cases By Country' pane-specification-id='3' param='[federated.1qpnhej1l6uuov1gbs4xx17g6ijw].[none:Calculation_2223933796451827712:nk]' type-v2='color' w='8502' x='43091' y='12380'>
                 <zone-style>
                   <format attr='border-color' value='#000000' />
                   <format attr='border-style' value='none' />
@@ -1649,7 +1656,7 @@ From the scatter graph to the left, it is evident that during the lockdown perio
                   <format attr='margin' value='4' />
                 </zone-style>
               </zone>
-              <zone h='69511' id='35' name='Map' w='8502' x='43092' y='29578'>
+              <zone h='69511' id='35' name='Map' w='8502' x='43091' y='29578'>
                 <layout-cache minheight='258' minwidth='202' type-h='scalable' type-w='scalable' />
                 <zone-style>
                   <format attr='border-color' value='#000000' />
@@ -1660,7 +1667,7 @@ From the scatter graph to the left, it is evident that during the lockdown perio
               </zone>
             </zone>
           </zone>
-          <zone forceUpdate='true' h='11469' id='28' type-v2='text' w='51169' x='425' y='911'>
+          <zone forceUpdate='true' h='11469' id='28' type-v2='text' w='51168' x='425' y='911'>
             <formatted-text>
               <run fontalignment='1' fontname='Tableau Bold' fontsize='18'>Final Dashboard</run>
             </formatted-text>
@@ -1671,7 +1678,7 @@ From the scatter graph to the left, it is evident that during the lockdown perio
               <format attr='margin' value='4' />
             </zone-style>
           </zone>
-          <zone h='49089' id='54' name='Positive Vs Day For India(Percentage)' w='13124' x='51594' y='911'>
+          <zone h='49089' id='54' name='Positive Vs Day For India(Percentage)' w='15038' x='51593' y='911'>
             <zone-style>
               <format attr='border-color' value='#000000' />
               <format attr='border-style' value='none' />
@@ -1679,7 +1686,7 @@ From the scatter graph to the left, it is evident that during the lockdown perio
               <format attr='margin' value='4' />
             </zone-style>
           </zone>
-          <zone h='49089' id='55' name='New Cases Vs Day For India' w='16217' x='64718' y='911'>
+          <zone h='49089' id='55' name='New Cases Vs Day For India' w='14303' x='66631' y='911'>
             <zone-style>
               <format attr='border-color' value='#000000' />
               <format attr='border-style' value='none' />
@@ -1687,7 +1694,7 @@ From the scatter graph to the left, it is evident that during the lockdown perio
               <format attr='margin' value='4' />
             </zone-style>
           </zone>
-          <zone h='49089' id='56' name='New Cases Vs Day After Lockdown(India)' w='18640' x='80935' y='911'>
+          <zone h='49089' id='56' name='New Cases Vs Day Lockdown and after(India)' w='18641' x='80934' y='911'>
             <zone-style>
               <format attr='border-color' value='#000000' />
               <format attr='border-style' value='none' />
@@ -1695,7 +1702,7 @@ From the scatter graph to the left, it is evident that during the lockdown perio
               <format attr='margin' value='4' />
             </zone-style>
           </zone>
-          <zone h='49089' id='57' name='Deaths Vs Day(India and USA)' w='22427' x='72423' y='50000'>
+          <zone h='49089' id='57' name='Deaths Vs Day(India and USA)' w='22427' x='72422' y='50000'>
             <zone-style>
               <format attr='border-color' value='#000000' />
               <format attr='border-style' value='none' />
@@ -1703,7 +1710,7 @@ From the scatter graph to the left, it is evident that during the lockdown perio
               <format attr='margin' value='4' />
             </zone-style>
           </zone>
-          <zone h='49089' id='58' name='Deaths Vs Day(India and USA)' pane-specification-id='1' param='[federated.1qpnhej1l6uuov1gbs4xx17g6ijw].[none:Country:nk]' type-v2='color' w='4725' x='94850' y='50000'>
+          <zone h='49089' id='58' name='Deaths Vs Day(India and USA)' pane-specification-id='1' param='[federated.1qpnhej1l6uuov1gbs4xx17g6ijw].[none:Country:nk]' type-v2='color' w='4726' x='94849' y='50000'>
             <zone-style>
               <format attr='border-color' value='#000000' />
               <format attr='border-style' value='none' />
@@ -1711,7 +1718,7 @@ From the scatter graph to the left, it is evident that during the lockdown perio
               <format attr='margin' value='4' />
             </zone-style>
           </zone>
-          <zone h='49089' id='59' name='Serious and Critical Cases In The USA' w='20829' x='51594' y='50000'>
+          <zone h='49089' id='59' name='Serious and Critical Cases In The USA' w='20829' x='51593' y='50000'>
             <zone-style>
               <format attr='border-color' value='#000000' />
               <format attr='border-style' value='none' />
@@ -1731,9 +1738,9 @@ From the scatter graph to the left, it is evident that during the lockdown perio
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='3100' minheight='3100' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='65' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='98178' id='64' param='vert' type-v2='layout-flow' w='99150' x='425' y='911'>
-                <zone forceUpdate='true' h='11469' id='28' type-v2='text' w='51169' x='425' y='911'>
+            <zone h='100000' id='67' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98178' id='66' param='vert' type-v2='layout-flow' w='99150' x='425' y='911'>
+                <zone forceUpdate='true' h='11469' id='28' type-v2='text' w='51168' x='425' y='911'>
                   <formatted-text>
                     <run fontalignment='1' fontname='Tableau Bold' fontsize='18'>Final Dashboard</run>
                   </formatted-text>
@@ -1745,7 +1752,7 @@ From the scatter graph to the left, it is evident that during the lockdown perio
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='280' h='49089' id='54' is-fixed='true' name='Positive Vs Day For India(Percentage)' w='13124' x='51594' y='911'>
+                <zone fixed-size='280' h='49089' id='54' is-fixed='true' name='Positive Vs Day For India(Percentage)' w='15038' x='51593' y='911'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -1754,7 +1761,7 @@ From the scatter graph to the left, it is evident that during the lockdown perio
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='280' h='49089' id='55' is-fixed='true' name='New Cases Vs Day For India' w='16217' x='64718' y='911'>
+                <zone fixed-size='280' h='49089' id='55' is-fixed='true' name='New Cases Vs Day For India' w='14303' x='66631' y='911'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -1763,7 +1770,7 @@ From the scatter graph to the left, it is evident that during the lockdown perio
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='280' h='49089' id='56' is-fixed='true' name='New Cases Vs Day After Lockdown(India)' w='18640' x='80935' y='911'>
+                <zone fixed-size='280' h='49089' id='56' is-fixed='true' name='New Cases Vs Day Lockdown and after(India)' w='18641' x='80934' y='911'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -1772,7 +1779,7 @@ From the scatter graph to the left, it is evident that during the lockdown perio
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='255' h='32863' id='3' is-fixed='true' name='New Cases By Country' w='21328' x='425' y='12380'>
+                <zone fixed-size='255' h='32863' id='3' is-fixed='true' name='New Cases By Country' w='21326' x='425' y='12380'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -1781,7 +1788,7 @@ From the scatter graph to the left, it is evident that during the lockdown perio
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='143' h='17198' id='8' name='New Cases By Country' pane-specification-id='3' param='[federated.1qpnhej1l6uuov1gbs4xx17g6ijw].[none:Calculation_2223933796451827712:nk]' type-v2='color' w='8502' x='43092' y='12380'>
+                <zone fixed-size='143' h='17198' id='8' name='New Cases By Country' pane-specification-id='3' param='[federated.1qpnhej1l6uuov1gbs4xx17g6ijw].[none:Calculation_2223933796451827712:nk]' type-v2='color' w='8502' x='43091' y='12380'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -1790,7 +1797,7 @@ From the scatter graph to the left, it is evident that during the lockdown perio
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='223' h='28901' id='12' is-fixed='true' name='Total Cases' w='21339' x='21753' y='12380'>
+                <zone fixed-size='223' h='28901' id='12' is-fixed='true' name='Total Cases' w='21340' x='21751' y='12380'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -1799,7 +1806,7 @@ From the scatter graph to the left, it is evident that during the lockdown perio
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='280' h='69511' id='35' is-fixed='true' name='Map' w='8502' x='43092' y='29578'>
+                <zone fixed-size='280' h='69511' id='35' is-fixed='true' name='Map' w='8502' x='43091' y='29578'>
                   <layout-cache minheight='258' minwidth='202' type-h='scalable' type-w='scalable' />
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -1809,7 +1816,7 @@ From the scatter graph to the left, it is evident that during the lockdown perio
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='223' h='28902' id='21' is-fixed='true' name='Population' w='21339' x='21753' y='41281'>
+                <zone fixed-size='223' h='28902' id='21' is-fixed='true' name='Population' w='21340' x='21751' y='41281'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -1818,7 +1825,7 @@ From the scatter graph to the left, it is evident that during the lockdown perio
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='191' h='24940' id='10' is-fixed='true' name='New Deaths By Country' w='21328' x='425' y='45243'>
+                <zone fixed-size='191' h='24940' id='10' is-fixed='true' name='New Deaths By Country' w='21326' x='425' y='45243'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -1827,7 +1834,7 @@ From the scatter graph to the left, it is evident that during the lockdown perio
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='280' h='49089' id='59' is-fixed='true' name='Serious and Critical Cases In The USA' w='20829' x='51594' y='50000'>
+                <zone fixed-size='280' h='49089' id='59' is-fixed='true' name='Serious and Critical Cases In The USA' w='20829' x='51593' y='50000'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -1836,7 +1843,7 @@ From the scatter graph to the left, it is evident that during the lockdown perio
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='280' h='49089' id='57' is-fixed='true' name='Deaths Vs Day(India and USA)' w='22427' x='72423' y='50000'>
+                <zone fixed-size='280' h='49089' id='57' is-fixed='true' name='Deaths Vs Day(India and USA)' w='22427' x='72422' y='50000'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -1845,7 +1852,7 @@ From the scatter graph to the left, it is evident that during the lockdown perio
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone h='49089' id='58' name='Deaths Vs Day(India and USA)' pane-specification-id='1' param='[federated.1qpnhej1l6uuov1gbs4xx17g6ijw].[none:Country:nk]' type-v2='color' w='4725' x='94850' y='50000'>
+                <zone h='49089' id='58' name='Deaths Vs Day(India and USA)' pane-specification-id='1' param='[federated.1qpnhej1l6uuov1gbs4xx17g6ijw].[none:Country:nk]' type-v2='color' w='4726' x='94849' y='50000'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -1854,7 +1861,7 @@ From the scatter graph to the left, it is evident that during the lockdown perio
                     <format attr='padding' value='0' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='224' h='28906' id='9' is-fixed='true' name='Deaths And Cases' w='42667' x='425' y='70183'>
+                <zone fixed-size='224' h='28906' id='9' is-fixed='true' name='Deaths And Cases' w='42666' x='425' y='70183'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -1951,8 +1958,8 @@ From the scatter graph to the left, it is evident that during the lockdown perio
         <devicelayout auto-generated='true' name='Phone'>
           <size maxheight='750' minheight='750' sizing-mode='vscroll' />
           <zones>
-            <zone h='100000' id='52' type-v2='layout-basic' w='100000' x='0' y='0'>
-              <zone h='98178' id='51' param='vert' type-v2='layout-flow' w='99150' x='425' y='911'>
+            <zone h='100000' id='54' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98178' id='53' param='vert' type-v2='layout-flow' w='99150' x='425' y='911'>
                 <zone h='98178' id='8' mode='checkdropdown' name='Total Cases' param='[federated.1qpnhej1l6uuov1gbs4xx17g6ijw].[none:Country:nk]' type-v2='filter' w='8502' x='91073' y='911'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
@@ -2197,7 +2204,7 @@ From the scatter graph to the left, it is evident that during the lockdown perio
       </viewpoint>
       <simple-id uuid='{93C4CBCB-81E8-4370-8D97-BA0F858DCD8C}' />
     </window>
-    <window class='worksheet' name='Positive Vs Day For India(Percentage)'>
+    <window class='worksheet' maximized='true' name='Positive Vs Day For India(Percentage)'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -2213,7 +2220,7 @@ From the scatter graph to the left, it is evident that during the lockdown perio
           <strip size='2147483647'>
             <card type='rows' />
           </strip>
-          <strip size='31'>
+          <strip size='30'>
             <card type='title' />
           </strip>
         </edge>
@@ -2261,7 +2268,7 @@ From the scatter graph to the left, it is evident that during the lockdown perio
       </viewpoint>
       <simple-id uuid='{9C569FF6-DC86-4B6B-AF26-3BE56E4E4297}' />
     </window>
-    <window class='worksheet' name='New Cases Vs Day After Lockdown(India)'>
+    <window class='worksheet' name='New Cases Vs Day Lockdown and after(India)'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -2277,7 +2284,7 @@ From the scatter graph to the left, it is evident that during the lockdown perio
           <strip size='2147483647'>
             <card type='rows' />
           </strip>
-          <strip size='31'>
+          <strip size='30'>
             <card type='title' />
           </strip>
         </edge>
@@ -2460,10 +2467,10 @@ From the scatter graph to the left, it is evident that during the lockdown perio
             </color-one-way>
           </highlight>
         </viewpoint>
-        <viewpoint name='New Cases Vs Day After Lockdown(India)'>
+        <viewpoint name='New Cases Vs Day For India'>
           <zoom type='entire-view' />
         </viewpoint>
-        <viewpoint name='New Cases Vs Day For India'>
+        <viewpoint name='New Cases Vs Day Lockdown and after(India)'>
           <zoom type='entire-view' />
         </viewpoint>
         <viewpoint name='Positive Vs Day For India(Percentage)'>
@@ -2473,10 +2480,10 @@ From the scatter graph to the left, it is evident that during the lockdown perio
           <zoom type='entire-view' />
         </viewpoint>
       </viewpoints>
-      <active id='11' />
+      <active id='21' />
       <simple-id uuid='{EF6958E7-AB8E-439B-B733-CC9B5CB7C905}' />
     </window>
-    <window class='dashboard' maximized='true' name='FinalDashboard'>
+    <window class='dashboard' name='FinalDashboard'>
       <viewpoints>
         <viewpoint name='Deaths And Cases'>
           <zoom type='entire-view' />
@@ -2500,10 +2507,10 @@ From the scatter graph to the left, it is evident that during the lockdown perio
             </color-one-way>
           </highlight>
         </viewpoint>
-        <viewpoint name='New Cases Vs Day After Lockdown(India)'>
+        <viewpoint name='New Cases Vs Day For India'>
           <zoom type='entire-view' />
         </viewpoint>
-        <viewpoint name='New Cases Vs Day For India'>
+        <viewpoint name='New Cases Vs Day Lockdown and after(India)'>
           <zoom type='entire-view' />
         </viewpoint>
         <viewpoint name='New Deaths By Country'>
@@ -2514,6 +2521,33 @@ From the scatter graph to the left, it is evident that during the lockdown perio
         </viewpoint>
         <viewpoint name='Positive Vs Day For India(Percentage)'>
           <zoom type='entire-view' />
+          <selection-collection>
+            <tuple-selection>
+              <tuple-reference>
+                <tuple-descriptor>
+                  <pane-descriptor>
+                    <x-fields>
+                      <field>[federated.1qpnhej1l6uuov1gbs4xx17g6ijw].[none:Country:nk]</field>
+                      <field>[federated.1qpnhej1l6uuov1gbs4xx17g6ijw].[tdy:Date:qk]</field>
+                    </x-fields>
+                    <y-fields>
+                      <field>[federated.1qpnhej1l6uuov1gbs4xx17g6ijw].[avg:Percentage_Positive:qk]</field>
+                    </y-fields>
+                  </pane-descriptor>
+                  <columns>
+                    <field>[federated.1qpnhej1l6uuov1gbs4xx17g6ijw].[avg:Percentage_Positive:qk]</field>
+                    <field>[federated.1qpnhej1l6uuov1gbs4xx17g6ijw].[none:Country:nk]</field>
+                    <field>[federated.1qpnhej1l6uuov1gbs4xx17g6ijw].[tdy:Date:qk]</field>
+                  </columns>
+                </tuple-descriptor>
+                <tuple>
+                  <value>0.0090231089999999996</value>
+                  <value>&quot;India&quot;</value>
+                  <value>#2020-05-22 00:00:00#</value>
+                </tuple>
+              </tuple-reference>
+            </tuple-selection>
+          </selection-collection>
         </viewpoint>
         <viewpoint name='Serious and Critical Cases In The USA'>
           <zoom type='entire-view' />
@@ -2522,370 +2556,378 @@ From the scatter graph to the left, it is evident that during the lockdown perio
           <zoom type='entire-view' />
         </viewpoint>
       </viewpoints>
-      <active id='56' />
+      <active id='54' />
       <simple-id uuid='{559C7119-D4B5-46D6-A850-3B49C3DFF9A9}' />
     </window>
   </windows>
   <thumbnails>
     <thumbnail height='192' name='Anikait_Dashboard' width='192'>
       iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAABYlAAAWJQFJUiTw
-      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
+      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
+      TkSuQmCC
     </thumbnail>
     <thumbnail height='192' name='Chris_Dashboard' width='192'>
       iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAABYlAAAWJQFJUiTw
@@ -5540,120 +5582,6 @@ From the scatter graph to the left, it is evident that during the lockdown perio
       ne279lAu54DOCNDhHsfu8rPR38X4tRlOnjqLNxjg3KmTzMzMAotft2UVu6rzoxdfQbHI7Oj3
       IlmtnD9/nvj0NGNTM8xFwvi7u7F3dRGdnW5/Zv1/i+zcpmMrbQYAAAAASUVORK5CYII=
     </thumbnail>
-    <thumbnail height='192' name='New Cases Vs Day After Lockdown(India)' width='192'>
-      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
-    </thumbnail>
     <thumbnail height='192' name='New Cases Vs Day For India' width='192'>
       iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAA7DAAAOwwHHb6hk
       AAAN1klEQVR4nO3dWWxc130G8O8uM5x9yOFOLRRJiaZEWvIiOVG9Jk7dpAGcBY3bPDhoX1p0
@@ -5723,6 +5651,112 @@ From the scatter graph to the left, it is evident that during the lockdown perio
       R3NtipECh558BhICE2M3sbfvICx/AIYsQ/rCGO7rxuLyKprs2u2409q5F7GEA8sy4WtKIhQO
       o+BIGKYf0WgUXd1b+11xMRxpjV0g0hoDQFpjAEhrDABp7f8AziAF+XvX5msAAAAASUVORK5C
       YII=
+    </thumbnail>
+    <thumbnail height='192' name='New Cases Vs Day Lockdown and after(India)' width='192'>
+      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
+      OgAAAABJRU5ErkJggg==
     </thumbnail>
     <thumbnail height='192' name='New Deaths By Country' width='192'>
       iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAA7DAAAOwwHHb6hk
@@ -6233,96 +6267,131 @@ From the scatter graph to the left, it is evident that during the lockdown perio
       g3zq2F6WaOL/AN8VVDJmLXZUAAAAAElFTkSuQmCC
     </thumbnail>
     <thumbnail height='192' name='Positive Vs Day For India(Percentage)' width='192'>
-      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
-      gg==
+      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
+      6tr/BySbY2AbUkbwAAAAAElFTkSuQmCC
     </thumbnail>
     <thumbnail height='192' name='Serious and Critical Cases In The USA' width='192'>
       iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAA7DAAAOwwHHb6hk
